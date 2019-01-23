@@ -1,14 +1,37 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function outerFunction(cat) {
+    console.log(`${cat} will not leave my desk!`);
+    
+  function innerFunction() {
+    console.log(`It's fine. I like having ${cat} up here with me.`);
+  };
+  innerFunction();
+};
+outerFunction("Dutch");
+
 
 // ==== Challenge 2: Create a counter function ====
+let num = 0;
 const counter = () => {
+  console.log(num++);
   // Return a function that when invoked increments and returns a counter variable.
 };
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
+
+function newCounter() {
+  counter();
+}
+
+newCounter();
+newCounter();
+newCounter();
+newCounter();
+newCounter();
+newCounter();
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 

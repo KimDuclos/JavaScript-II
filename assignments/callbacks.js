@@ -30,38 +30,65 @@ getLength(items, function(length){
 });
 
 
+
+
+
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  return cb(arr[3]);
+  return cb(arr[arr.length-1]);
 }
-last(items, function(last){
-  console.log(last);
+last(items, function(lastItem){
+  console.log(lastItem);
 })
+
+
+
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  cb(x,y);
+  var result = x + y;
+  cb(result);
 }
-function add(a,b){
-  console.log(a+b);
-}
-sumNums(2, 4, add);
+sumNums(2, 4, function(result) {
+  console.log(result);
+});
+
+
+
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-  cb(x,y);
+  cb(x*y);
 }
-function product(a,b){
-  console.log(a*b);
-}
-multiplyNums(1, 2, product);
+multiplyNums(2, 4, function(product) {
+  console.log(product);
+});
 
-function contains(item, list, cb) {
+
+
+
+function contains(word, arr, cb) {  // high order function
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  cb(item, list);
+  for (i=0; i<arr.length; i++){
+    if (word === arr[i]){
+        cb("true");
+    }
+    else {
+      cb("false");
+    }
+  }
 }
-function present()
+contains("Notebook", items, function(result){
+  console.log(result);
+}); 
+
+
+
+
+
 
 /* STRETCH PROBLEM */
 
